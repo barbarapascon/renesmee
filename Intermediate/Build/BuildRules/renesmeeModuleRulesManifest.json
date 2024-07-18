@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Users\\barba\\Projetos\\Unreal\\renesmee\\Source\\renesmee\\renesmee.Build.cs",
+		"C:\\Users\\barba\\Projetos\\Unreal\\renesmee\\Source\\renesmee.Target.cs",
+		"C:\\Users\\barba\\Projetos\\Unreal\\renesmee\\Source\\renesmeeEditor.Target.cs"
+	],
+	"EngineVersion": "5.4.2"
+}

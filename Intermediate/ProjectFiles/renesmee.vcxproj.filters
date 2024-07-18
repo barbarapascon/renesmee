@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\renesmee.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\renesmee.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\renesmeeEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\renesmee">
+      <UniqueIdentifier>{355079CE-5FD6-3474-911E-EAE2F81CAB70}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\renesmee\MapManeger.cpp">
+      <Filter>Source\renesmee</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\renesmee\MapManeger.h">
+      <Filter>Source\renesmee</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\renesmee\renesmee.Build.cs">
+      <Filter>Source\renesmee</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\renesmee\renesmee.cpp">
+      <Filter>Source\renesmee</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\renesmee\renesmee.h">
+      <Filter>Source\renesmee</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\renesmee\TileActor.cpp">
+      <Filter>Source\renesmee</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\renesmee\TileActor.h">
+      <Filter>Source\renesmee</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "renesmee",
+			"Path": "..\\Source\\renesmee.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "renesmeeEditor",
+			"Path": "..\\Source\\renesmeeEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
