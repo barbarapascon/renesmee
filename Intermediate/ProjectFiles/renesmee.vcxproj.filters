@@ -53,5 +53,12 @@
     <ClInclude Include="..\..\Source\renesmee\TileActor.h">
       <Filter>Source\renesmee</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\renesmee\TileMapSaver.cpp">
+      <Filter>Source\renesmee</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\renesmee\TileMapSaver.h">
+      <Filter>Source\renesmee</Filter>
+    </ClInclude>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

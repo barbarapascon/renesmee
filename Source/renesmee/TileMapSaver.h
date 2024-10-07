@@ -1,26 +1,20 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
 #include "CoreMinimal.h"
+#include "../../../../../../../Program Files/Epic Games/UE_5.4/Engine/Plugins/2D/Paper2D/Source/Paper2D/Classes/PaperTileMap.h"
 #include "GameFramework/Actor.h"
 #include "TileMapSaver.generated.h"
+
+
 
 UCLASS()
 class RENESMEE_API ATileMapSaver : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
-	// Sets default values for this actor's properties
-	ATileMapSaver();
-
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UFUNCTION(BlueprintCallable, Category = "TileMap")
+	void SaveTileMap(UPaperTileMap* TileMap, const FString& Path);
 
 };

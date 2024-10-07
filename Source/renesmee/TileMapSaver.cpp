@@ -2,26 +2,46 @@
 
 
 #include "TileMapSaver.h"
+#include "../../../../../../../Program Files/Epic Games/UE_5.4/Engine/Plugins/2D/Paper2D/Source/Paper2D/Classes/PaperTileMap.h"
+#include "../../../../../../../Program Files/Epic Games/UE_5.4/Engine/Plugins/2D/Paper2D/Source/Paper2D/Classes/PaperTileMapComponent.h"
+#include "Misc/PackageName.h"
+#include "Serialization/ArchiveSaveCompressedProxy.h"
+#include "Kismet/GameplayStatics.h"
+#include "AssetRegistry.generated.h"
+#include "UObject/SavePackage.h"
+#include <UObject/NoExportTypes.h>
+#include <AssetRegistry/AssetRegistryModule.h>
 
-// Sets default values
-ATileMapSaver::ATileMapSaver()
+
+void ATileMapSaver::SaveTileMap(UPaperTileMap* TileMap, const FString& Path)
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+    if (!TileMap)
+    {
+        UE_LOG(LogTemp, Error, TEXT("TileMap is null"));
+        return;
+    }
 
+    FString PackageName = FPaths::ProjectContentDir() / Path;
+    UPackage* Package = CreatePackage(*PackageName);
+
+    if (Package)
+    {
+        TileMap->Rename(*TileMap->GetName(), Package);
+
+        // Obter o módulo de registro de ativos e registrar o novo ativo
+        FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
+        AssetRegistryModule.AssetCreated(TileMap);
+
+        Package->MarkPackageDirty();
+        FString FilePath = PackageName + FPackageName::GetAssetPackageExtension();
+
+        FSavePackageArgs SaveArgs;
+        SaveArgs.TopLevelFlags = RF_Public | RF_Standalone;
+        SaveArgs.Error = GError;
+        SaveArgs.SaveFlags = SAVE_None;
+
+        UPackage::SavePackage(Package, TileMap, EObjectFlags::RF_Public | RF_Standalone, *FilePath, GError, nullptr, true, true, SAVE_None);
+    }
 }
 
-// Called when the game starts or when spawned
-void ATileMapSaver::BeginPlay()
-{
-	Super::BeginPlay();
-	
-}
-
-// Called every frame
-void ATileMapSaver::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
 
